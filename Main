@@ -1,0 +1,112 @@
+local JSLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/GMJS-Scripts/JS-HUB/main/Main')))()
+
+local Window = JSLib:MakeWindow({Name = "JS-HUB", HidePremium = true, SaveConfig = false, ConfigFolder = "JSTESTE", IntroEnabled = true, IntroText = "JS-STUDIO HUB"})
+
+--Valores
+_G.AutoOpen = true
+_G.AutoClick = true
+
+
+--Funções
+
+function AutoOpen()
+	while _G.AutoOpen == true do
+		local args = {
+			[1] = "Magic",
+			[3] = true
+		}
+				game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("_Index"):WaitForChild("sleitnick_knit@1.4.7"):WaitForChild("knit"):WaitForChild("Services"):WaitForChild("EggService"):WaitForChild("RF"):WaitForChild("Open"):InvokeServer(unpack(args))
+	end
+end
+
+function AutoClick()
+	while _G.AutoClick == true do
+		local args = {
+			[1] = {
+				[1] = {
+					[1] = "'"
+				}
+			}
+		}
+		
+		game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+		wait(.000000000000000000000000000000000000000000000000000000000001)
+		
+	end
+end
+
+
+
+
+local Tab1 = Window:MakeTab({
+	Name = "Main",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+        
+})
+
+Tab1:AddToggle({
+	Name = "AutoOpen(no egg animation!!)",
+	Default = false,
+	Callback = function(Value)
+		_G.AutoOpen = Value
+		AutoOpen()			
+	end    
+})
+
+Tab1:AddToggle({
+	Name = "AutoClick",
+	Default = false,
+	Callback = function(Value)
+		_G.AutoClick = Value
+		AutoClick()			
+	end    
+})
+
+
+local Tab2 = Window:MakeTab({
+	Name = "Misc",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = Tab2:AddSection({
+	Name = "Anti-AFK"
+})
+
+Tab2:AddButton({
+	Name = "Anti-AFK!",
+	Callback = function()
+        JSLib:MakeNotification({
+            Name = "Anti-AFK!",
+            Content = "ACTIVATED",
+            Image = "rbxassetid://4483345998",
+            Time = 4
+        })
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/GMJS-Scripts/AntiAFK/main/Menu1"))()
+  	end    
+})
+
+
+local Tab3 = Window:MakeTab({
+	Name = "MISC",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab3:AddButton({
+	Name = "infiniteyield",
+	Callback = function()
+        JSLib:MakeNotification({
+            Name = "infiniteyield",
+            Content = "Loaded!!",
+            Image = "rbxassetid://4483345998",
+            Time = 3
+        })
+        loadstring(game:HttpGet('https:/raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+  	end    
+})
+
+local Section = Tab3:AddSection({
+	Name = "Tap RightShift to Close/Open interface"
+})
