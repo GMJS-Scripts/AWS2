@@ -4,6 +4,8 @@ local Window = JSLib:MakeWindow({Name = "JS-HUB", HidePremium = true, SaveConfig
 
 --Valores
 _G.AutoOpen = true
+_G.AutoOpenName = nil
+_G.AutoOpenValue = nil
 _G.AutoClick = true
 
 
@@ -12,7 +14,8 @@ _G.AutoClick = true
 function AutoOpen()
 	while _G.AutoOpen == true do
 		local args = {
-			[1] = "Magic",
+			[1] = _G.AutoOpenName,
+            [2] = _G.AutoOpenValue,
 			[3] = true
 		}
 				game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("_Index"):WaitForChild("sleitnick_knit@1.4.7"):WaitForChild("knit"):WaitForChild("Services"):WaitForChild("EggService"):WaitForChild("RF"):WaitForChild("Open"):InvokeServer(unpack(args))
@@ -49,6 +52,71 @@ Tab1:AddToggle({
 	Callback = function(Value)
 		_G.AutoOpen = Value
 		AutoOpen()			
+	end    
+})
+
+Tab1:AddDropdown({
+	Name = "SelectStar",
+	Default = "",
+	Options = {"Pirate", "PirateBoss",
+     "Alien", "AlienBoss",
+      "Ninja", "NinjaBoss",
+       "Sword", "SwordBoss",
+        "Reaper", "ReaperBoss",
+         "Hero", "HeroBoss",
+          "Hunter", "HunterBoss",
+           "Magic", "MagicBoss",
+        }, --"", "", "", "", "", "", ""},
+	Callback = function(Value)
+		if Value == "Pirate" then
+            _G.AutoOpenName = "Pirate"
+            _G.AutoOpenValue = nil
+        elseif Value == "PirateBoss" then
+        _G.AutoOpenName = "Pirate"
+        _G.AutoOpenValue = 2
+          elseif Value == "Alien" then
+        _G.AutoOpenName = "Alien"
+        _G.AutoOpenValue = nil
+          elseif Value == "AlienBoss" then
+        _G.AutoOpenName = "Alien"
+        _G.AutoOpenValue = 2
+         elseif Value == "Ninja" then
+        _G.AutoOpenName = "Ninja"
+        _G.AutoOpenValue = nil
+         elseif Value == "NinjaBoss" then
+        _G.AutoOpenName = "Ninja"
+        _G.AutoOpenValue = 2
+         elseif Value == "Sword" then
+        _G.AutoOpenName = "Sword"
+        _G.AutoOpenValue = nil
+          elseif Value == "SwordBoss" then
+        _G.AutoOpenName = "Sword"
+        _G.AutoOpenValue = 2
+          elseif Value == "Reaper" then
+        _G.AutoOpenName = "Reaper"
+        _G.AutoOpenValue = nil
+          elseif Value == "ReaperBoss" then
+        _G.AutoOpenName = "Reaper"
+        _G.AutoOpenValue = 2
+          elseif Value == "Hero" then
+        _G.AutoOpenName = "Hero"
+        _G.AutoOpenValue = nil
+          elseif Value == "HeroBoss" then
+        _G.AutoOpenName = "Hero"
+        _G.AutoOpenValue = 2
+         elseif Value == "Hunter" then
+        _G.AutoOpenName = "Hunter"
+        _G.AutoOpenValue = nil
+          elseif Value == "HunterBoss" then
+        _G.AutoOpenName = "Hunter"
+        _G.AutoOpenValue = 2
+           elseif Value == "Magic" then
+        _G.AutoOpenName = "Magic"
+        _G.AutoOpenValue = nil
+         elseif Value == "MagicBoss" then
+        _G.AutoOpenName = "Magic"
+        _G.AutoOpenValue = 2
+         end
 	end    
 })
 
@@ -202,3 +270,4 @@ Tab3:AddButton({
 local Section = Tab3:AddSection({
 	Name = "Tap RightShift to Close/Open interface"
 })
+
