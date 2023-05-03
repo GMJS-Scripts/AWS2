@@ -18,7 +18,6 @@ function AutoOpen()
 				game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("_Index"):WaitForChild("sleitnick_knit@1.4.7"):WaitForChild("knit"):WaitForChild("Services"):WaitForChild("EggService"):WaitForChild("RF"):WaitForChild("Open"):InvokeServer(unpack(args))
 	end
 end
-
 function AutoClick()
 	while _G.AutoClick == true do
 		local args = {
@@ -34,7 +33,6 @@ function AutoClick()
 		
 	end
 end
-
 
 
 
@@ -69,6 +67,100 @@ local Tab2 = Window:MakeTab({
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
+
+
+local Section = Tab2:AddSection({
+	Name = "DungeonShop"
+})
+
+Tab2:AddButton({
+	Name = "YenBoost",
+	Callback = function(Value)
+		local args = {
+			[1] = {
+				[1] = {
+					[1] = "T",
+					[2] = "YenBoost"
+				}
+			}
+		}
+		game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))				
+	end    
+})
+Tab2:AddButton({
+	Name = "LuckBoost",
+	Callback = function(Value)
+		local args = {
+			[1] = {
+				[1] = {
+					[1] = "T",
+					[2] = "LuckBoost"
+				}
+			}
+		}
+		game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))				
+	end    
+})
+Tab2:AddButton({
+	Name = "DamageBoost",
+	Callback = function(Value)
+		local args = {
+			[1] = {
+				[1] = {
+					[1] = "T",
+					[2] = "DamageBoost"
+				}
+			}
+		}
+		game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))				
+	end    
+})
+Tab2:AddButton({
+	Name = "BattleTicket",
+	Callback = function(Value)
+		local args = {
+			[1] = {
+				[1] = {
+					[1] = "T",
+					[2] = "BattleTicket"
+				}
+			}
+		}
+		
+		game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))					
+	end    
+})
+Tab2:AddButton({
+	Name = "SecretBoost",
+	Callback = function(Value)
+		local args = {
+			[1] = {
+				[1] = {
+					[1] = "T",
+					[2] = "SecretBoost"
+				}
+			}
+		}
+		game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))				
+	end    
+})
+
+local Section = Tab2:AddSection({
+	Name = "Open GUIs"
+})
+
+Tab2:AddButton({
+	Name = "Artifacts/Auras",
+	Callback = function()
+	local gui = game.Players.LocalPlayer.PlayerGui:WaitForChild("Frames"):WaitForChild("Artifacts")
+		if gui.Enabled == false then
+       	 gui.Enabled = true
+			else
+				gui.Enabled = false
+		end
+  	end 
+})
+
 
 local Section = Tab2:AddSection({
 	Name = "Anti-AFK"
