@@ -1,6 +1,6 @@
 local JSLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/GMJS-Scripts/JS-HUB/main/Main')))()
 
-local Window = JSLib:MakeWindow({Name = "JS-HUB", HidePremium = true, SaveConfig = false, ConfigFolder = "JSTESTE", IntroEnabled = true, IntroText = "JS-STUDIO HUB"})
+local Window = JSLib:MakeWindow({Name = "JS-HUB", HidePremium = true, SaveConfig = true, ConfigFolder = "JSTESTE", IntroEnabled = true, IntroText = "JS-STUDIO HUB"})
 
 --Valores
 _G.AutoOpen = true
@@ -57,7 +57,7 @@ Tab1:AddToggle({
 
 Tab1:AddDropdown({
 	Name = "SelectStar",
-	Default = "",
+	Default = "Pirate",
 	Options = {"Pirate", "PirateBoss",
      "Alien", "AlienBoss",
       "Ninja", "NinjaBoss",
