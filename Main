@@ -66,6 +66,7 @@ Tab1:AddDropdown({
          "Hero", "HeroBoss",
           "Hunter", "HunterBoss",
            "Magic", "MagicBoss",
+	   "Sorcerer", "SorcererBoss",
         }, --"", "", "", "", "", "", ""},
 	Callback = function(Value)
 		if Value == "Pirate" then
@@ -115,6 +116,12 @@ Tab1:AddDropdown({
         _G.AutoOpenValue = nil
          elseif Value == "MagicBoss" then
         _G.AutoOpenName = "Magic"
+        _G.AutoOpenValue = 2
+	           elseif Value == "Sorcerer" then
+        _G.AutoOpenName = "Sorcerer"
+        _G.AutoOpenValue = nil
+         elseif Value == "SorcererBoss" then
+        _G.AutoOpenName = "Sorcerer"
         _G.AutoOpenValue = 2
          end
 	end    
