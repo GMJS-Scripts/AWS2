@@ -66,8 +66,9 @@ Tab1:AddDropdown({
          "Hero", "HeroBoss",
           "Hunter", "HunterBoss",
            "Magic", "MagicBoss",
-	   "Sorcerer", "SorcererBoss",
-	    "City", "CityBoss",
+	  		"Sorcerer", "SorcererBoss",
+	   		 "City", "CityBoss",
+	   		  "Kingdom", "KingdomBoss",
         }, --"", "", "", "", "", "", ""},
 	Callback = function(Value)
 		if Value == "Pirate" then
@@ -124,13 +125,19 @@ Tab1:AddDropdown({
          elseif Value == "SorcererBoss" then
         _G.AutoOpenName = "City"
         _G.AutoOpenValue = 2
-	_G.AutoOpenName = "City"
+		_G.AutoOpenName = "City"
         _G.AutoOpenValue = nil
          elseif Value == "CityBoss" then
         _G.AutoOpenName = "City"
         _G.AutoOpenValue = 2
-         end
-	end    
+         elseif Value == "Kingdom" then
+        _G.AutoOpenName = "Kingdom"
+        _G.AutoOpenValue = nil
+         elseif Value == "KingdomBoss" then
+        _G.AutoOpenName = "Kingdom"
+        _G.AutoOpenValue = 2
+        end
+	end 
 })
 
 Tab1:AddToggle({
@@ -283,4 +290,3 @@ Tab3:AddButton({
 local Section = Tab3:AddSection({
 	Name = "Tap RightShift to Close/Open interface"
 })
-
